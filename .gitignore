@@ -1,0 +1,5 @@
+__*
+data/*
+.*
+!__init__.py
+!.gitignore
