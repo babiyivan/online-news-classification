@@ -1,7 +1,7 @@
 # TUW-NLP2024
 
-This project uses python ^3.12 and poetry for dependecy management
-You can create a python virtual enviroment with pyenv
+This project uses python ^3.12 and [poetry](https://python-poetry.org/) for dependecy management
+You can create a python virtual enviroment with [pyenv](https://github.com/pyenv/pyenv)
 ~~~
 pyenv install 3.12 # install fitting python version if needed
 pyenv local 3.12 # select fitting python version to use in this folder
