@@ -1,0 +1,22 @@
+# POS Tagging and Stopword Issues
+
+## Issues Identified
+
+### POS Tagging
+- **Misclassification of Proper Nouns**: Proper nouns were frequently misclassified due to lowercasing. For example:
+  - "Unity Foods" was tagged as NOUN instead of PROPN.
+  - "Edvard Munch’s" was tagged as NOUN instead of PROPN.
+  - "residents" are tagged as PROPN instead of NOUN.
+  - "Jane" is tagged as NOUN instead of PROPN.
+  - "Fondas" is tagged as VERB instead of PROPN.
+
+
+### Stopwords
+- Some stopwords (that, do, we, d, s) were inadvertently left in the text.
+
+## Improvements Implemented
+
+### Enhanced Tokenization
+- Integrated spaCy's tokenizer to address complex tokenization cases more effectively. This change also resolved the issue of leftover stopwords.
+
+Overall, while some errors still persist, there has been a significant reduction in their occurrence. These improvements lead to better analysis and more meaningful insights from the text data.
