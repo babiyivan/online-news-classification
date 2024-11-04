@@ -30,13 +30,19 @@ This project uses Python 3.12 and [Poetry](https://python-poetry.org/) for depen
    poetry install --no-root
    ```
 
-5. **Activate the Poetry Virtual Environment**:
+5. **Install Jupyter** (if not already installed):
+   If Jupyter is not installed, you can add it with:
+   ```bash
+   poetry add jupyter
+   ```
+
+6. **Activate the Poetry Virtual Environment**:
    To start working in the virtual environment, type:
    ```bash
    poetry shell
    ```
 
-6. **Run the Jupyter Notebook**:
+7. **Run the Jupyter Notebook**:
    Navigate to the notebooks directory and start Jupyter:
    ```bash
    cd notebooks
