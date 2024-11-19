@@ -36,9 +36,8 @@ def read_files_to_df(basedir: Path, language: Language) -> DataFrame:
     for filepath in tqdm(dir.iterdir()):
         res.append({
             "file path": filepath,
-            "file name": filepath.name,
+            "file name": filepath.name.split(".")[0],
             "text": read_file_as_string(filepath),
-            "type": filepath.name.split("_")[1]
         })
     return pd.DataFrame(data=res)
 
@@ -107,7 +106,6 @@ def get_file_labels_dataframe(
     all_labels = list(set([f"CC: {el}" if el != "Other" else el for el in labels_to_indx_cc.keys() ] + [f"URW: {el}" if el != "Other" else el for el in labels_to_indx_ua.keys() ]))
     all_labels = sorted(all_labels)
     label_to_indx = {label:i for i, label in enumerate(all_labels)}
-    print(label_to_indx)
 
     # Read file annotations and generate labels
     lines = open(annotation_file).readlines()
@@ -118,7 +116,7 @@ def get_file_labels_dataframe(
         to_labels = naratives if labelLevel == LabelLevel.NARATIVES else subnaratives
         labels = set(to_labels.split(";"))
         maped_labels = list(map(lambda x: label_to_indx.get(x, None), labels))
-        filenames.append(filename.strip())
+        filenames.append(filename.strip().split(".")[0])
         label_indxs.append(maped_labels)
 
     n = len(filenames)
