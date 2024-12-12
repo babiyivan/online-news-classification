@@ -178,6 +178,12 @@ A quick overview of the Roberta model performance can be found in the table belo
 
 [The classification report for BERT](/notebooks/milestone2_baseline_bert.ipynb)
 
+Similarly to RoBERTa, The classification report and metrics indicate that the model struggles to correctly identify most of the classes. The precision, recall, and F1-score for the majority of categories are 0.00, which may stem from class imbalance and very low support for many categories, making it difficult for the model to learn useful patterns.
+
+The overall macro metrics are particularly telling: a Macro F1 of 0.02 and macro-level precision and recall near zero indicate that the model is not performing well on any class consistently. While the micro and sample averages are a bit higher, the improvement is still minimal. The low subset accuracy and the low F1 scores confirm that the model is not providing reliable multi-label predictions.
+
+These results suggest the need for a more balanced dataset, more extensive training, or possibly a different model architecture or input representation to improve performance. 
+
 A quick overview of the baseline BERT performance for the English dataset is found below:
 
 |              | precision | recall | f1   | support |
