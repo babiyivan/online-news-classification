@@ -111,7 +111,7 @@ If we satisfy the data by model, we can see that surprisingly the best-performin
 |BG|               0.105984 |              0.11909  |                 0.164049  |                 0.202867 |                      0.102331 |                    0.0908275 |
 |HI|               0.101805 |              0.124388 |                 0.0951321 |                 0.122299 |                      0.137011 |                    0.140536  |
 
-If we aggregate the data by language, we notice some unexpected results. Before the analysis, we assumed that English would have the best results since English is the most widely supported language in NLP, but it seems that the accuracy for the Portuges data is much better. It could be because the PT dataset is more balanced, or maybe it contains a lot more 'Other' labels which are normally the most prevalent in the dataset and easier to classify.
+If we aggregate the data by language, we notice some unexpected results. Before the analysis, we assumed that English would have the best results since English is the most widely supported language in NLP, but it seems that the accuracy for the Portuguese data is much better. It could be because the PT dataset is more balanced, or maybe it contains a lot more 'Other' labels which are normally the most prevalent in the dataset and easier to classify.
 
 #### Which Narrative labels are the easiest to predict
 To score used to calcučate how good label predictions are is obtained by the following formula:
@@ -165,8 +165,42 @@ The overall metrics are as follows: The micro average precision is 0.45, recall 
 
 Additional metrics include a Hamming Loss of 0.0467, which indicates the fraction of labels that are incorrectly predicted. A lower value is better, so this is relatively low, but given the other metrics, it doesn't compensate for the poor performance. The Macro F1 is 0.0067, which is extremely low, reinforcing the poor performance across all classes. The Micro F1 is 0.1731, which is slightly better but still indicates poor performance. The Subset Accuracy is 0.0, indicating that the model did not perfectly predict any instance, which is a critical issue.
 
+A quick overview of the Roberta model performance can be found in the table below:
+
+|              | precision | recall | f1   | support |
+|--------------|-----------|--------|------|---------|
+| micro avg    | 0.45      | 0.11   | 0.17 | 168     |
+| macro avg    | 0.00      | 0.01   | 0.01 | 168     |
+| weighted avg | 0.05      | 0.11   | 0.07 | 168     |
+| samples avg  | 0.45      | 0.23   | 0.30 | 168     |
+
+### Deep learning BERT
+
+[The classification report for BERT](/notebooks/milestone2_baseline_bert.ipynb)
+
+A quick overview of the baseline BERT performance for the English dataset is found below:
+
+|              | precision | recall | f1   | support |
+|--------------|-----------|--------|------|---------|
+| micro avg    | 0.11      | 0.31   | 0.16 | 300     |
+| macro avg    | 0.01      | 0.09   | 0.02 | 300     |
+| weighted avg | 0.12      | 0.31   | 0.17 | 300     |
+| samples avg  | 0.11      | 0.52   | 0.17 | 300     |
+
+### Comparison of baseline models
+The table below contains the performance metrics of all the baseline models:
+
+|                       | macro f1 | macro precision | macro recall |
+|-----------------------|----------|-----------------|--------------|
+| RandomForest Baseline | 0.016    | 0.026           | 0.013        |
+| MultinomialNB         | 0.08     | 0.09            | 0.122        |
+| BERT                  | 0.02     | 0.01            | 0.09         |
+| Roberta               | 0.01     | 0.00            | 0.01         |
+
+Even tho BERT and ROBERTA are state-of-the-art Models pre-trained on large datasets, they are still not able to learn enough from the small dataset with sparse labels to beat simple, but more robust models Such as the MultinomialNb, which uses word counts as a feature. This is a good starting point for our future models, as we know now that simple text features such as word counts should be enough to reach a macro F1 score  ~0.08
 
 
 ### Division of work
 - Tibor Cus - building traditional ML models, quantitative analysis, report
-- Ahmed Sabanovic - ROBERTA deepl learning baseline, qualitative and quantitative analysis
+- Ahmed Sabanovic - ROBERTA deep learning baseline, qualitative and quantitative analysis
+- Theo Hauray - BERT deep learning baseline, qualitative and quantitative analysis
