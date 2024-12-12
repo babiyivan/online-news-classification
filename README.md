@@ -152,8 +152,34 @@ Based on the results we can see that we struggle with the prediction of Narrativ
 All of the code related to the quantitative analysis, building of models, and the required data transformations can be found [here](/notebooks/milestone2-traditional_ml_methods.ipynb)
 
 #### Qualitative analysis
+In reviewing the mismatches found across the 5 samples, several key observations and potential patterns were identified.
 
-IVAN ADDS HIS ANALYSIS/notebook link here
+Inconsistent classification for similar statements
+A recurring mismatch involves statements that discuss similar topics or sentiments but are classified differently by the model. For example, in sample 1 "CC: Criticism of climate movement: Ad hominem attacks on key activists"** and "CC: Downplaying climate change: Ice is not melting" are classified as True in the ground truth, yet predicted as False. These errors may point to misclassification in cases where there are nuanced debates around climate change policies or activism. These topics might overlap with broader political and social ideologies, which makes the classification task challenging.
+
+Ideological complexity
+Several labels in the mismatch list involve ideological positions that can be interpreted in multiple ways depending on one’s perspective. For example, I sample the statement "URW: Amplifying war-related fears: The West will attack other countries" is difficult because it involves predicting a future political scenario with implications for geopolitics. The label itself is a reflection of a specific ideological viewpoint (the belief that the West might provoke a larger conflict). The model may have trouble distinguishing between valid concerns and propagandist narratives.
+
+"Other" label
+In sample1 and sample3, many mismatches occur for statements labeled "Other". For example, the statement "CC: Criticism of climate policies: Other" is misclassified as False in the sample. The label "Other" generally indicates broad or less easily definable categories, or at least the label that applies in case none of the other labels in the same topic (in this case "Criticism of climate policies") apply. This could also point to a dataset challenge where labels within the “Other” category are either too vague or inconsistently applied, making it harder for the model to develop a reliable classification rule for such instances.
+
+Ambiguity
+The model seems to struggle when faced with complex or ambiguous phrasing. For instance, in sample 2, the statement "CC: Criticism of climate policies: Climate policies have a negative impact on the economy" was misclassified, indicating that the model may be challenged by nuanced criticisms that require a deeper understanding of the economic implications of climate policies.
+
+Similarly, sample 4 contains multiple predictions around political and war-related fears (e.g., "The West will attack other countries" and "The real possibility of nuclear weapons"), where the model might be overlooking subtle differences in the phrasing or context in these complex political arguments.
+
+Conclusion
+Several key takeaways from the analyzed mismatches (quantitative analysis) are:
+
+More often than not, the model incorrectly predicts 'False' when the actual label is 'True', this seems to be a pattern across the sampled cases, the only exception being sample1.
+
+The model may struggle because the statements involve subjective interpretations that depend on political ideology, which may cause it to misclassify them.
+
+Labels such as "Other" and other generalized criticisms (e.g., "Climate policies are ineffective") seem to be frequently misclassified. The model might fail to grasp the broader context or interpret these vague categories correctly, leading to errors.
+
+Statements that critique complex subjects like climate change policies or specific persons (e.g., "Ad hominem attacks on key activists") involve subtle language and multi-layered arguments, which might be difficult for the model to properly interpret, causing misclassification.
+
+The full qualitative analysis can be found [here](/notebooks/milestone2-traditional-ml-evaluation.ipynb)
 
 
 ### Deep learning ROBERTA
@@ -210,3 +236,4 @@ Even tho BERT and ROBERTA are state-of-the-art Models pre-trained on large datas
 - Tibor Cus - building traditional ML models, quantitative analysis, report
 - Ahmed Sabanovic - ROBERTA deep learning baseline, qualitative and quantitative analysis
 - Theo Hauray - BERT deep learning baseline, qualitative and quantitative analysis
+- Ivan Babiy - Traditional ML methods Qualitative analysis
