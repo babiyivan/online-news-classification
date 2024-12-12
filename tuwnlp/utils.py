@@ -23,12 +23,20 @@ class Topic(Enum):
     CLIMATE_CHANGE = "cc"
     UKRAINE = "ua"
 
+# def read_file_as_string(filepath: Path, tokenType = TokenType.DEFAULT) -> str:
+#     lines = open(filepath).readlines()[1:-1]
+#     res = []
+#     for line in lines:
+#         res.append(line.split("\t")[tokenType.value])
+#     return " ".join(res)
+
 def read_file_as_string(filepath: Path, tokenType = TokenType.DEFAULT) -> str:
-    lines = open(filepath).readlines()[1:-1]
+    with open(filepath, encoding='utf-8') as file:
+        lines = file.readlines()[1:-1]
     res = []
     for line in lines:
-        res.append(line.split("\t")[tokenType.value])
-    return " ".join(res)
+        res.append(line.strip())
+    return ' '.join(res)
 
 def read_files_to_df(basedir: Path, language: Language) -> DataFrame:
     dir = basedir / language.value
