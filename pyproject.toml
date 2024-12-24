@@ -17,6 +17,7 @@ stanza = "^1.9.2"
 torch = "^2.5.0"
 spacy = "3.7.5"
 pyproject-toml = "^0.0.10"
+pytest = "^8.3.4"
 
 
 [[tool.poetry.source]]
@@ -31,3 +32,8 @@ ipykernel = "^6.29.5"
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
+
+[tool.pytest.ini_options]
+pythonpath = [
+  "."
+]
