@@ -51,6 +51,10 @@ This project uses Python 3.12 and [Poetry](https://python-poetry.org/) for depen
 
 Now you're all set to work on the project!
 
+## Management Summary
+
+For a simple explanation of this project, refer to the [Management Summary](management-summary.pdf).
+
 ## Milestone 1 Report
 All of the code, analysis, and evaluations done as part of milestone 1 can be found [here](/notebooks/milestone1.ipynb)
 
