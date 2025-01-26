@@ -1,5 +1,6 @@
 __*
 .*
+data/
 !__init__.py
 !.gitignore
 data/preprocessed/*
