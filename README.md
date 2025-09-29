@@ -1,4 +1,4 @@
-﻿# Narrative classification in online news using NLP (TUW-NLP2024)
+﻿# Narrative classification in online news using NLP
 
 Multilingual narrative-classification project for the Natural Language Processing and Information Extraction course, centred on extracting propaganda narratives from online news. Baselines span traditional ML (MultinomialNB, RandomForest) and transformer models (BERT, RoBERTa) evaluated with macro-F1 and related metrics. Deliverables include milestone notebooks, management summary, and final presentation summarising insights and next steps.
 
