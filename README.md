@@ -1,22 +1,15 @@
-﻿# Online News Classification Overview
+﻿# Narrative classification in online news using NLP (TUW-NLP2024)
 
-- Multilingual narrative-classification project for the TU Wien NLP 2024 course, centred on extracting propaganda narratives from online news.
-- Baselines span traditional ML (MultinomialNB, RandomForest) and transformer models (BERT, RoBERTa) evaluated with macro-F1 and related metrics.
-- Deliverables include milestone notebooks, management summary, and final presentation summarising insights and next steps.
+Multilingual narrative-classification project for the Natural Language Processing and Information Extraction course, centred on extracting propaganda narratives from online news. Baselines span traditional ML (MultinomialNB, RandomForest) and transformer models (BERT, RoBERTa) evaluated with macro-F1 and related metrics. Deliverables include milestone notebooks, management summary, and final presentation summarising insights and next steps.
 
-## Repository Highlights
-- `notebooks/milestone1.ipynb`: data curation, preprocessing pipeline, and exploratory analysis.
-- `notebooks/milestone2_baseline_{bert,roberta}.ipynb`: transformer baselines and evaluation reports.
-- `docs/management-summary.pdf`: short overview for stakeholders; `docs/presentation.pdf`: final slide deck.
-- `docs/ex.pdf` and `docs/NARRATIVE-TAXONOMIES.pdf`: dataset and taxonomy references used in the study.
-
----
-
-# TUW-NLP2024
-
-For a simple explanation, refer to the [management summary](management-summary.pdf).
+For a simple explanation, refer to the [management summary](docs/management-summary.pdf).
 
 This project uses Python 3.12 and [Poetry](https://python-poetry.org/) for dependency management.
+
+## Repository structure
+- `notebooks/milestone1.ipynb`: data curation, preprocessing pipeline, and exploratory analysis.
+- `notebooks/milestone2_baseline_{bert,roberta}.ipynb`: transformer baselines and evaluation reports.
+- `docs/management-summary.pdf`: short overview for stakeholders; `docs/presentation.pdf`: final presentation.
 
 ## Setup Instructions
 
